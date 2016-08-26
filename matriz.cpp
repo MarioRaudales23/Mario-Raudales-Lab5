@@ -123,7 +123,7 @@ const matriz matriz::operator*(const matriz& derecha)const{
 	int interno = this->columnas;
 	if (this->columnas == derecha.filas)
 	{
-		matriz nueva(filas,columnas);
+		matriz nueva(fnueva,cnueva);
 		for (int i = 0; i < fnueva; ++i)
 		{
 			for (int j = 0; j < cnueva; ++j)
