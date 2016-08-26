@@ -47,9 +47,12 @@ int main(int argc, char const *argv[])
 				cin>>pos1;
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
-				matriz tem((matrices.at(pos1) + matrices.at(pos2)));
-				respuesta.push_back(tem);
-				cout<<tem<<endl;
+				if (pos1 < matrices.size() && pos2<matrices.size())
+				{
+					matriz tem((matrices.at(pos1) + matrices.at(pos2)));
+					respuesta.push_back(tem);
+					cout<<tem<<endl;
+				}
 				break;
 			}
 			case 3:
@@ -59,9 +62,12 @@ int main(int argc, char const *argv[])
 				cin>>pos1;
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
-				matriz tem((matrices.at(pos1) - matrices.at(pos2)));
-				respuesta.push_back(tem);
-				cout<<tem<<endl;
+				if (pos1 < matrices.size() && pos2<matrices.size())
+				{
+					matriz tem((matrices.at(pos1) - matrices.at(pos2)));
+					respuesta.push_back(tem);
+					cout<<tem<<endl;
+				}
 				break;
 			}
 			case 4:
