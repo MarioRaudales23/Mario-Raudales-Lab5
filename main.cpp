@@ -8,6 +8,7 @@ int main(int argc, char const *argv[])
 	int menu,filas,columnas;
 	char resp;
 	vector<matriz> matrices;
+	vector<matriz> respuesta;
 	double** matrizB;
 	do
 	{
@@ -25,14 +26,14 @@ int main(int argc, char const *argv[])
 				{
 					matrizB[i] = new double[columnas];
 				}
-				int tem;
+				int temp;
 				for (int i = 0; i < filas; ++i)
 				{
 					for (int j = 0; j < columnas; ++j)
 					{
 						cout<<"Ingrese el numero de la posicion i:"<<i<<" j: "<<j<<": ";
-						cin>>tem;
-						matrizB[i][j] = tem;
+						cin>>temp;
+						matrizB[i][j] = temp;
 					}
 				}
 				matriz nueva(matrizB,filas,columnas);
@@ -47,6 +48,7 @@ int main(int argc, char const *argv[])
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
 				matriz tem((matrices.at(pos1) + matrices.at(pos2)));
+				respuesta.push_back(tem);
 				cout<<tem<<endl;
 				break;
 			}
@@ -58,6 +60,7 @@ int main(int argc, char const *argv[])
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
 				matriz tem((matrices.at(pos1) - matrices.at(pos2)));
+				respuesta.push_back(tem);
 				cout<<tem<<endl;
 				break;
 			}
@@ -67,6 +70,7 @@ int main(int argc, char const *argv[])
 				cout<<"Ingrese la posicion de la primera matriz: ";
 				cin>>pos1;
 				-matrices.at(pos1);
+				respuesta.push_back(-matrices.at(pos1));
 				cout<<matrices.at(pos1);
 				break;
 			}
@@ -78,6 +82,7 @@ int main(int argc, char const *argv[])
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
 				matriz tem((matrices.at(pos1) * matrices.at(pos2)));
+				respuesta.push_back(tem);
 				cout<<tem<<endl;
 				break;
 			}
@@ -117,11 +122,17 @@ int main(int argc, char const *argv[])
 				cout<<"Ingrese la posicion de la primera matriz: ";
 				cin>>pos1;
 				matrices.at(pos1)();
+				respuesta.push_back((matrices.at(pos1)()));
 				cout<<matrices.at(pos1);
 				break;
 			}
 			case 9:
 			{
+				int pos1,pos2;
+				cout<<"Ingrese la posicion de la primera matriz: ";
+				cin>>pos1;
+				matrices.at(pos1)--;
+				cout<<matrices.at(pos1);
 				break;
 			}
 		}

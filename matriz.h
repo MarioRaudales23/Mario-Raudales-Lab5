@@ -20,7 +20,7 @@ class matriz{
 		const matriz operator-(const matriz&)const;
 		const matriz& operator-();
 		const matriz operator*(const matriz&)const;
-		const matriz& operator()();
+		const matriz& operator()()const;
 		const matriz& operator--();
 		bool operator!=(matriz&);
 		bool operator==(matriz&);

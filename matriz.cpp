@@ -135,11 +135,11 @@ const matriz matriz::operator*(const matriz& derecha)const{
 	return nueva;
 }
 
-const matriz& matriz::operator()(){
-	matriz nueva(columnas,filas);
-	for (int i = 0; i <	columnas; ++i)
+const matriz& matriz::operator()()const{
+	matriz nueva(this->columnas,this->filas);
+	for (int i = 0; i <	this->columnas; ++i)
 	{
-		for (int j = 0; j < filas; ++j)
+		for (int j = 0; j < this->filas; ++j)
 		{
 				nueva.matrizA[i][j] = this->matrizA[j][i];
 		}
