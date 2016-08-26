@@ -11,14 +11,14 @@ int main(int argc, char const *argv[])
 	double** matrizB;
 	do
 	{
-		cout<<"1.Agregar\n2.Suma\n3.Resta\n4.Negativa\n...";
+		cout<<"1.Agregar\n2.Suma\n3.Resta\n4.Negativa\n5.Multiplicacion\n6.Igules\n7.Diferente\n...";
 		cin>>menu;
 		switch(menu){
 			case 1:
 			{
-				cout<<"Ingrese las filas";
+				cout<<"Ingrese las filas: ";
 				cin>>filas;
-				cout<<"Ingrese las columnas";
+				cout<<"Ingrese las columnas: ";
 				cin>>columnas;
 				matrizB = new double*[filas];
 				for (int i = 0; i < filas; ++i)
@@ -72,14 +72,41 @@ int main(int argc, char const *argv[])
 			}
 			case 5:
 			{
+				int pos1,pos2;
+				cout<<"Ingrese la posicion de la primera matriz: ";
+				cin>>pos1;
+				cout<<"Ingrese la posicion de la segunda matriz: ";
+				cin>>pos2;
 				break;
 			}
 			case 6:
-			{
+			{				
+				int pos1,pos2;
+				cout<<"Ingrese la posicion de la primera matriz: ";
+				cin>>pos1;
+				cout<<"Ingrese la posicion de la segunda matriz: ";
+				cin>>pos2;
+				if ((matrices.at(pos1) == matrices.at(pos2)))
+				{
+					cout<<"Las matrices son iguales";
+				}else{
+					cout<<"Las matrices no son iguales";
+				}
 				break;
 			}
 			case 7:
 			{
+				int pos1,pos2;
+				cout<<"Ingrese la posicion de la primera matriz: ";
+				cin>>pos1;
+				cout<<"Ingrese la posicion de la segunda matriz: ";
+				cin>>pos2;
+				if ((matrices.at(pos1) != matrices.at(pos2)))
+				{
+					cout<<"Las matrices no son iguales";
+				}else{
+					cout<<"Las matrices son iguales";
+				}
 				break;
 			}
 			case 8:
