@@ -121,27 +121,34 @@ const matriz matriz::operator*(const matriz& derecha)const{
 	int fnueva = this->filas;
 	int cnueva = derecha.columnas;
 	int interno = this->columnas;
-	matriz nueva(filas,columnas);
-	for (int i = 0; i < fnueva; ++i)
+	if (this->columnas == derecha.filas)
 	{
-		for (int j = 0; j < cnueva; ++j)
+		matriz nueva(filas,columnas);
+		for (int i = 0; i < fnueva; ++i)
 		{
-			for (int k = 0; k < interno; ++k)
-			 {
-			 	nueva.matrizA[i][j] += this->matrizA[i][k] * derecha.matrizA[k][j];
-			 } 
+			for (int j = 0; j < cnueva; ++j)
+			{
+				for (int k = 0; k < interno; ++k)
+				 {
+				 	nueva.matrizA[i][j] += this->matrizA[i][k] * derecha.matrizA[k][j];
+				 } 
+			}
 		}
+		return nueva;
+	}else{
+		std::cout<<"La matrices no se pueden multiplicar";
 	}
-	return nueva;
+	
+	
 }
 
-const matriz& matriz::operator()()const{
+const matriz matriz::operator()()const{
 	matriz nuevax(this->columnas,this->filas);
-	for (int i = 0; i <	this->filas; ++i)
+	for (int i = 0; i <	this->columnas; ++i)
 	{
-		for (int j = 0; j < this->columnas; ++j)
+		for (int j = 0; j < this->filas; ++j)
 		{
-				nuevax.matrizA[j][i] = this->matrizA[i][j];
+				nuevax.matrizA[i][j] = this->matrizA[j][i];
 		}
 	}
 	return nuevax;

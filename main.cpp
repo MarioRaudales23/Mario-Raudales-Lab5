@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
 	double** matrizB;
 	do
 	{
-		cout<<"1.Agregar\n2.Suma\n3.Resta\n4.Negativa\n5.Multiplicacion\n6.Igules\n7.Diferente\n...";
+		cout<<"1.Agregar\n2.Suma\n3.Resta\n4.Negativa\n5.Multiplicacion\n6.Igules\n7.Diferente\n8.Transpuesta\n9.Determinante\n...";
 		cin>>menu;
 		switch(menu){
 			case 1:
@@ -81,9 +81,13 @@ int main(int argc, char const *argv[])
 				cin>>pos1;
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
-				matriz tem((matrices.at(pos1) * matrices.at(pos2)));
-				respuesta.push_back(tem);
-				cout<<tem<<endl;
+				if (pos1 < matrices.size() && pos2<matrices.size())
+				{
+						matriz tem((matrices.at(pos1) * matrices.at(pos2)));
+						respuesta.push_back(tem);
+						cout<<tem<<endl;
+				}
+				
 				break;
 			}
 			case 6:
@@ -132,7 +136,7 @@ int main(int argc, char const *argv[])
 				{
 					matrices.at(pos1)();
 					respuesta.push_back((matrices.at(pos1)()));
-					cout<<matrices.at(pos1);
+					cout<<matrices.at(pos1)();
 				}
 				break;
 			}
@@ -146,7 +150,7 @@ int main(int argc, char const *argv[])
 				break;
 			}
 		}
-		cout<<"Dese continuar[s/n]: ";
+		cout<<"Desea continuar[s/n]: ";
 		cin>>resp;
 	} while (resp == 's' || resp == 'S');
 	return 0;
