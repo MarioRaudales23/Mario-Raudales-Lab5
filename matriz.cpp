@@ -100,11 +100,11 @@ const matriz matriz::operator-(const matriz& derecha)const{
 	return nueva;
 }
 const matriz& matriz::operator-(){
-	for (int i = 0; i < filas; ++i)
+	for (int i = 0; i < this->filas; ++i)
 	{
-		for (int j = 0; j < columnas; ++j)
+		for (int j = 0; j < this->columnas; ++j)
 		{
-				this->matrizA[i][j] * -1;
+				this->matrizA[i][j] *= -1;
 		}
 	}
 }

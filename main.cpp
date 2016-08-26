@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
 				{
 					for (int j = 0; j < columnas; ++j)
 					{
-						cout<<"Ingrese el numero de la posicion i:"<<i<<" j: "<<j;
+						cout<<"Ingrese el numero de la posicion i:"<<i<<" j: "<<j<<": ";
 						cin>>tem;
 						matrizB[i][j] = tem;
 					}
@@ -42,9 +42,9 @@ int main(int argc, char const *argv[])
 			case 2:
 			{
 				int pos1,pos2;
-				cout<<"Ingrese la posicion de la primera matriz";
+				cout<<"Ingrese la posicion de la primera matriz: ";
 				cin>>pos1;
-				cout<<"Ingrese la posicion de la segunda matriz";
+				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
 				matriz tem((matrices.at(pos1) + matrices.at(pos2)));
 				cout<<tem<<endl;
@@ -53,9 +53,9 @@ int main(int argc, char const *argv[])
 			case 3:
 			{
 				int pos1,pos2;
-				cout<<"Ingrese la posicion de la primera matriz";
+				cout<<"Ingrese la posicion de la primera matriz: ";
 				cin>>pos1;
-				cout<<"Ingrese la posicion de la segunda matriz";
+				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
 				matriz tem((matrices.at(pos1) - matrices.at(pos2)));
 				cout<<tem<<endl;
@@ -67,6 +67,7 @@ int main(int argc, char const *argv[])
 				cout<<"Ingrese la posicion de la primera matriz";
 				cin>>pos1;
 				-matrices.at(pos1);
+				cout<<matrices.at(pos1);
 				break;
 			}
 			case 5:
