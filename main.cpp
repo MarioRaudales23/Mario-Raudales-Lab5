@@ -64,7 +64,7 @@ int main(int argc, char const *argv[])
 			case 4:
 			{				
 				int pos1,pos2;
-				cout<<"Ingrese la posicion de la primera matriz";
+				cout<<"Ingrese la posicion de la primera matriz: ";
 				cin>>pos1;
 				-matrices.at(pos1);
 				cout<<matrices.at(pos1);
@@ -77,6 +77,8 @@ int main(int argc, char const *argv[])
 				cin>>pos1;
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
+				matriz tem((matrices.at(pos1) * matrices.at(pos2)));
+				cout<<tem<<endl;
 				break;
 			}
 			case 6:
@@ -111,6 +113,11 @@ int main(int argc, char const *argv[])
 			}
 			case 8:
 			{
+				int pos1,pos2;
+				cout<<"Ingrese la posicion de la primera matriz: ";
+				cin>>pos1;
+				matrices.at(pos1)();
+				cout<<matrices.at(pos1);
 				break;
 			}
 			case 9:

@@ -144,6 +144,7 @@ const matriz& matriz::operator()(){
 				nueva.matrizA[i][j] = this->matrizA[j][i];
 		}
 	}
+	return nueva;
 }
 bool matriz::operator==(matriz& derecha){
 	int tama = 0;
