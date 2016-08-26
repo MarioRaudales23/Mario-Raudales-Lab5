@@ -121,9 +121,12 @@ int main(int argc, char const *argv[])
 				int pos1,pos2;
 				cout<<"Ingrese la posicion de la primera matriz: ";
 				cin>>pos1;
-				matrices.at(pos1)();
-				respuesta.push_back((matrices.at(pos1)()));
-				cout<<matrices.at(pos1);
+				if (pos1 < matrices.size())
+				{
+					matrices.at(pos1)();
+					respuesta.push_back((matrices.at(pos1)()));
+					cout<<matrices.at(pos1);
+				}
 				break;
 			}
 			case 9:
@@ -131,8 +134,8 @@ int main(int argc, char const *argv[])
 				int pos1,pos2;
 				cout<<"Ingrese la posicion de la primera matriz: ";
 				cin>>pos1;
-				matrices.at(pos1)--;
-				cout<<matrices.at(pos1);
+				--matrices.at(pos1);
+				cout<<"El determinante es: "<<--matrices.at(pos1);
 				break;
 			}
 		}
