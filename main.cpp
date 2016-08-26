@@ -93,11 +93,14 @@ int main(int argc, char const *argv[])
 				cin>>pos1;
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
-				if ((matrices.at(pos1) == matrices.at(pos2)))
+				if (pos1 < matrices.size() && pos2<matrices.size())
 				{
-					cout<<"Las matrices son iguales";
-				}else{
-					cout<<"Las matrices no son iguales";
+					if ((matrices.at(pos1) == matrices.at(pos2)))
+					{
+						cout<<"Las matrices no son iguales";
+					}else{
+						cout<<"Las matrices son iguales";
+					}
 				}
 				break;
 			}
@@ -108,12 +111,16 @@ int main(int argc, char const *argv[])
 				cin>>pos1;
 				cout<<"Ingrese la posicion de la segunda matriz: ";
 				cin>>pos2;
-				if ((matrices.at(pos1) != matrices.at(pos2)))
+				if (pos1 < matrices.size() && pos2<matrices.size())
 				{
-					cout<<"Las matrices no son iguales";
-				}else{
-					cout<<"Las matrices son iguales";
+					if ((matrices.at(pos1) != matrices.at(pos2)))
+					{
+						cout<<"Las matrices no son iguales";
+					}else{
+						cout<<"Las matrices son iguales";
+					}
 				}
+				
 				break;
 			}
 			case 8:

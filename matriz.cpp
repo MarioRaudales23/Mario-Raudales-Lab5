@@ -111,7 +111,7 @@ const matriz& matriz::operator-(){
 const int matriz::operator--(){
 	if (this->filas == 3 && this->columnas==3)
 	{
-		return (((matrizA[0][0]+matrizA[1][1]+matrizA[2][2])+(matrizA[0][1]+matrizA[1][2]+matrizA[2][0])+(matrizA[0][2]+matrizA[1][0]+matrizA[2][1]))-(matrizA[2][0]*matrizA[1][1]*matrizA[0][2])-(matrizA[2][1]*matrizA[1][2]*matrizA[0][0])-(matrizA[2][2]*matrizA[1][0]*matrizA[0][1]));
+		return (((matrizA[0][0]*matrizA[1][1]*matrizA[2][2])+(matrizA[0][1]*matrizA[1][2]*matrizA[2][0])+(matrizA[0][2]*matrizA[1][0]*matrizA[2][1]))-(matrizA[2][0]*matrizA[1][1]*matrizA[0][2])-(matrizA[2][1]*matrizA[1][2]*matrizA[0][0])-(matrizA[2][2]*matrizA[1][0]*matrizA[0][1]));
 	}else if (this->filas == 2 && this->columnas==2)
 	{
 		return (matrizA[0][0]*matrizA[1][1]) - (matrizA[0][1]*matrizA[1][0]);
@@ -136,15 +136,15 @@ const matriz matriz::operator*(const matriz& derecha)const{
 }
 
 const matriz& matriz::operator()()const{
-	matriz nueva(this->columnas,this->filas);
+	matriz nuevax(this->columnas,this->filas);
 	for (int i = 0; i <	this->filas; ++i)
 	{
 		for (int j = 0; j < this->columnas; ++j)
 		{
-				nueva.matrizA[j][i] = this->matrizA[i][j];
+				nuevax.matrizA[j][i] = this->matrizA[i][j];
 		}
 	}
-	return nueva;
+	return nuevax;
 }
 bool matriz::operator==(matriz& derecha){
 	int tama = 0;
