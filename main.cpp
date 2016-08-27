@@ -81,7 +81,6 @@ int main(int argc, char const *argv[])
 					respuesta.push_back(-matrices.at(pos1));
 					cout<<-matrices.at(pos1);
 				}
-				;
 				break;
 			}
 			case 5:
