@@ -77,27 +77,38 @@ string matriz::tostring()const{
 }
 
 const matriz matriz::operator+(const matriz& derecha)const{
-	matriz nueva(filas,columnas);
-	for (int i = 0; i < filas; ++i)
+	if (this->filas == derecha.filas && this->columnas == derecha.columnas)
 	{
-		for (int j = 0; j < columnas; ++j)
+		matriz nueva(filas,columnas);
+		for (int i = 0; i < filas; ++i)
 		{
-				nueva.matrizA[i][j] = (this->matrizA[i][j] + derecha.matrizA[i][j]); 
+			for (int j = 0; j < columnas; ++j)
+			{
+					nueva.matrizA[i][j] = (this->matrizA[i][j] + derecha.matrizA[i][j]); 
+			}
 		}
+		return nueva;
+	}else{
+		std::cout<<"No tienen el mismo tamaño";
 	}
-	return nueva;
 }
+	
 
 const matriz matriz::operator-(const matriz& derecha)const{
-	matriz nueva(filas,columnas);
-	for (int i = 0; i < filas; ++i)
+	if (this->filas == derecha.filas && this->columnas == derecha.columnas)
 	{
-		for (int j = 0; j < columnas; ++j)
+		matriz nueva(filas,columnas);
+		for (int i = 0; i < filas; ++i)
 		{
-				nueva.matrizA[i][j] = (this->matrizA[i][j] - derecha.matrizA[i][j]); 
+			for (int j = 0; j < columnas; ++j)
+			{
+					nueva.matrizA[i][j] = (this->matrizA[i][j] - derecha.matrizA[i][j]); 
+			}
 		}
+		return nueva;
+	}else{
+		std::cout<<"No tienen el mismo tamaño";
 	}
-	return nueva;
 }
 const matriz& matriz::operator-(){
 	for (int i = 0; i < this->filas; ++i)
